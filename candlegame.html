@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>candle游戏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div class="loading_mask" style="display:none">
+         <s></s>
+         <div id="loadBar" class="loadBar">
+              <span class="percent">
+                  <i></i>
+              </span>
+              <span class="percentNum">0%</span>
+        </div>  
+    </div>
+    <div class="m_candlegame">
+          <div class="game_c">
+               <div class="rule_content">
+                        <div class="rule_tt">
+                              <h3>TOMTOP</h3>
+                              <h4>13th Anniversary !</h4>
+                              <p>Every customer can play this cake game to win gifts after placing orders.</p>
+                        </div>
+                        <div class="rule_info">
+                          <h3>Rules:</h3>
+                          <p> 1.Every customer have a chance to win a free gift!</p>
+                          <p>2.One account just have a only one chance to play this lucky draw.</p>
+                          <p>3.We will send the gift with your order if you are lucky to draw a gift.</p>
+                          <p>4.TOMTOP.COM reserve all rights to this contest.</p>
+                        </div>
+               </div>
+          <div class="stage_wrap">
+               <div class="game_stage">
+                    <div class="stage">
+                         <!-- <div class="fire_bar">
+                              <div class="fire_handle"></div>
+                         </div> -->
+                         <ul>
+                           <li class="cake cake1">
+                             <div class="range_click"></div>
+                             <div class="fire">
+                                  <div class="flames fire_bar"></div>
+                                  <div class="flames flames1 "></div>
+                                  <div class="flames flames2"></div>
+                                  <div class="flames flames3"></div>
+                                  <div class="flames flames4"></div>
+                                  <div class="flames flames5"></div>
+                             </div>
+                           </li>
+                           <li class="cake cake2">
+                             <div class="range_click"></div>
+                             <div class="fire">
+                                  <div class="flames fire_bar "></div>
+                                  <div class="flames flames1 "></div>
+                                  <div class="flames flames2"></div>
+                                  <div class="flames flames3"></div>
+                                  <div class="flames flames4"></div>
+                                  <div class="flames flames5"></div>
+                             </div>
+                          </li>
+                          <li class="cake cake3">
+                             <div class="range_click"></div>
+                             <div class="fire">
+                                  <div class="flames fire_bar "></div>
+                                  <div class="flames flames1 "></div>
+                                  <div class="flames flames2"></div>
+                                  <div class="flames flames3"></div>
+                                  <div class="flames flames4"></div>
+                                  <div class="flames flames5"></div>
+                             </div>
+                           </li>
+                            <li class="cake cake4">
+                             <div class="range_click"></div>
+                             <div class="fire">
+                                  <div class="flames fire_bar "></div>
+                                  <div class="flames flames1 "></div>
+                                  <div class="flames flames2"></div>
+                                  <div class="flames flames3"></div>
+                                  <div class="flames flames4"></div>
+                                  <div class="flames flames5"></div>
+                             </div>
+                           </li>
+                          <li class="cake cake5">
+                             <div class="range_click"></div>
+                             <div class="fire">
+                                  <div class="flames fire_bar "></div>
+                                  <div class="flames flames1 "></div>
+                                  <div class="flames flames2"></div>
+                                  <div class="flames flames3"></div>
+                                  <div class="flames flames4"></div>
+                                  <div class="flames flames5"></div>
+                             </div>
+                           </li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+          <div class="pize_list clearfix">
+               <h3>Gift List</h3>
+               <ul>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift1.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift2.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift3.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift4.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift5.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift6.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift7.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift8.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift9.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift10.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift11.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="pic">
+                     <img src="img/gift12.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift13.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift14.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift15.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift16.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift17.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+                  <li>
+                   <div class="pic">
+                     <img src="img/gift18.jpg" alt="">
+                     <div class="info">
+                       <p class="p1">iPhone 5S 4G
+Smartphone 16G</p>
+                       <p class="p2">5 pcs</p>
+                     </div>
+                   </div>
+                 </li>
+               </ul>
+
+          </div>
+         
+        
+         </div>
+    </div>
+     
+      <!--中奖弹出层-->
+      <div class="dialog_pop winning">
+              <s></s>
+              <div class="text_pop">
+                   <p class="p1">Congratulations!</p>
+                   <p class="p2">You got the gift </p>
+                   <p class="p3">TOMSHOO Outdoor Picnic Camping
+Hiking Sleeping Bag Liner</p>
+              </div>
+              <div class="flower"></div>
+              <div class="bang"></div>
+              <div class="mask"></div>
+      </div>
+      <script src="js/candlegame.js"></script>
+</body>
+</html>

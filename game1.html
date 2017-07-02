@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏一</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        *{box-sizing:border-box;}
+        .stage{width:800px;height:800px;margin:100px auto;border:1px solid #ccc;position:relative;}
+        .stage_c{width:100%;height:100%;position:relative;}
+        #start_btn{position:absolute;bottom:20px;font-size:28px;left:50%;transform:translateX(-50%);}
+        #fire{  
+            width:50px ;height:50px;background:red;  
+            position: absolute; z-index:10;
+        }  
+        .cake{  
+            width:100px ;height: 100px;background:green;  
+            position: absolute;z-index:1;
+            font-size:38px;color:#fff;text-align:center;line-height: 100px;
+        }
+        .cake.red{background:red;}
+        .cake1{left:200px;top:200px;}
+        .cake2{left:320px;top:200px;}
+        .cake3{left:440px;top:200px;}
+        .cake4{left:200px;top:320px;}
+        .cake5{left:320px;top:320px;}
+        .cake6{left:440px;top:320px;}
+    </style>  
+</head>
+<body>
+    <div class="stage">
+        <div class="stage_c">
+            <div class="cake cake1">1</div>
+            <div class="cake cake2">2</div>
+            <div class="cake cake3">3</div>
+            <div class="cake cake4">4</div>
+            <div class="cake cake5">5</div>
+            <div class="cake cake6">6</div>
+        </div>
+        <input type="button" value = "start" id="start_btn">
+    </div>  
+<script>  
+    $(function(){
+        var game1 = {
+            run:function(){
+                this.start();
+            },
+            start:function(){
+                var _this = this;
+                var cake = $(".cake");
+                var stage_c = $(".stage_c");
+                var opL = stage_c.offset().left;
+                var opT = stage_c.offset().top;
+                $("#start_btn").click(function(ev){
+                    $(this).hide().siblings().show();
+                    var fire = $("<div id='fire'></div>");
+                    var e = ev || window.event;
+                    console.log(ev);
+                    var x = e.pageX - opL - 25;
+                    var y = e.pageY - opL - 25 ;
+                    fire.css({'left':x,'top':y});
+                    $(".stage_c").append(fire);
+                });
+
+                $(document).mousemove(function(ev){
+                        var fire = $("#fire");
+                        var cake = $('.cake');
+                        var ev = ev || window.event;
+                        var x = ev.pageX  - opL - 25;
+                        var y = ev.pageY - opT -25;
+                        if(fire.length > 0){
+                            fire.css({'left':x,'top':y});
+                            cake.each(function(index,el){
+                                 if($(el).siblings().hasClass('red')){
+                                    console.log('您的机会已经用完了');
+                                 }else{
+                                    _this.rangeCheck(fire,$(el))
+                                 }
+                            })
+                        }
+                })
+               
+                
+            },
+            //范围检测
+            rangeCheck:function(obj1,obj2){
+                var l1 = obj1.position().left;
+                var r1 = obj1.position().left + obj1.width();
+                var t1 = obj1.position().top;
+                var b1 = obj1.position().top + obj1.height(); 
+                var l2 = obj2.position().left;
+                var r2 = obj2.position().left + obj2.width();
+                var t2 = obj2.position().top;
+                var b2 = obj2.position().top + obj2.height(); 
+                if(b1 < t2 || l1 > r2 || t1 > b2 || r1 < l2){
+                   // 表示没碰上  
+                }else{
+                    obj2.addClass('red');
+                }  
+
+            }
+        }
+        game1.run();
+    })
+  
+</script>   
+</body>
+
+</html>

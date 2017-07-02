@@ -1,0 +1,428 @@
+@charset "utf-8";
+a,abbr,address,blockquote,body,caption,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,form,h1,h2,h3,h4,h5,h6,html,iframe,img,ins,label,legend,li,object,ol,p,pre,q,small,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,ul,input{margin:0;padding:0;border:0;}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+html{font-family:chicuu,Arial;font-size:12px;*overflow-x:hidden;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#666;background-color:#fff;}
+html{height:100%}
+body{height:100%;}
+a{color:#333;outline:none;blr:~"expression(this.onFocus=this.blur())";
+	&:hover{color:#333}
+}
+img{border:0px;display:inline-block;vertical-align:middle;}
+ul{list-style-type:none;}
+.clear{clear:both;}
+.clearfix{clear:both; zoom:1;}
+.clearfix:after{clear:both; display:block; height:0; font-size:0; content:"."; visibility:hidden;}
+input,button,select,pre,textarea{font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:12px;line-height:16px;outline:none;}
+button{border:none}
+h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0;padding:0}
+i,em{font-style:normal;}
+s{text-decoration:none;font-style:normal;}
+/*竖直居中*/
+.centerY(){display: inline-block;vertical-align: middle;}
+.centerTY(){top:50%;transform:translateY(-50%);transform:-moz-translateY(-50%);transform:-webkit-translateY(-50%);transform:-ms-translateY(-50%)}
+/*水平居中*/
+.centerX(){left:50%;transform:translateX(-50%);transform:-moz-translateX(-50%);transform:-webkit-translateX(-50%);transform:-ms-translateX(-50%)}
+.center(){position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transform:-moz-translate(-50%,50%);transform:-webkit-translate(-50%,50%);transform:-ms-translate(-50%,50%)}
+/*网页加载loading*/
+.loading_mask{
+   width:100%;height:100%;position:fixed;top:0;left:0;z-index:100;background:#fff;text-align:center;
+   s{display:inline-block;width:1px;height:100%;.centerY()}
+   .loadBar{
+   	    width:90%;
+   	    max-width:1200px;
+	    height: 30px;
+	    border: 3px solid #212121;
+	    .centerY();
+	    border-radius: 20px;
+	    position: relative;
+	    .percent,i{box-shadow: inset 0 -2px 6px rgba(0, 0, 0, .4);
+            width: 0%;
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+          i{
+          	width: 100%;
+            -webkit-animation: loadingmove .8s linear infinite;
+            background: -webkit-linear-gradient(left top, #7ed047 0%, #7ed047 25%, #4ea018 25%, #4ea018 50%, #7ed047 50%, #7ed047 75%, #4ea018 75%, #4ea018 100%);
+            background-size: 40px 40px;
+          }
+        }
+        .percentNum{
+        	position: absolute;
+            top: -28px;
+            .centerX();
+            padding: 1px 15px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border: 1px solid #222;
+            background-color: #222;
+            color: #fff;
+        }
+
+
+   }
+}
+ @-webkit-keyframes loadingmove
+        {
+            0%
+            {
+                background-position: 0 0;
+            }
+            100%
+            {
+                background-position: 40px 0;
+            }
+}
+.m_candlegame{position:relative;max-width:1200px;margin:0px auto;background:#ffcc62;padding:10px;
+   .game_c{border:2px solid #6c2b18;border-radius:2px;}
+}
+.rule_content{border-bottom:2px solid #6c2b18;padding:30px 20px;margin:0 auto;font-size:24px;color:#6c2b18;text-align:center;
+	.rule_tt{
+		h3{font-size:90px;}
+		h4{font-size:76px;}
+		p{font-size:30px;margin:40px 0}
+	}
+	.rule_info{
+	    h3{font-weight:bold;}
+	    p{line-height:26px;}
+    }
+}
+.stage_wrap{background-size:auto;max-width:1200px;margin:0 auto;}
+.game_stage{
+	cursor:url(../img/link.cur),auto;
+	position:relative;height:100%;padding:10px 0;border-bottom:2px solid #6c2b18;
+	.stage{position:relative;height:100%;background:#6c2b18;overflow: hidden;
+	   .fire_bar{
+	   	  position:absolute;width:117px;height:164px;background:url(../img/fire.png) no-repeat;bottom:20%;right:30%;
+	   	  .fire_handle{
+              width:117px;height:104px;position: absolute;right:0;bottom:0;
+          }
+	   }
+       .cake{width:201px;height:247px;background:url(../img/cake.png) no-repeat;position:absolute;
+          .range_click{position:absolute;width:34px;height:44px;.centerX();top:-10px;}
+          &.show{
+          	 .fire{display:block}
+          }
+          &.centerAni{
+	           animation:center 0.5s forwards; -webkit-animation:center 0.5s  forwards; -moz-animation: center 0.5s forwards; -o-animation:center 0.5s forwards;
+          }
+       }
+       .fire{position:absolute;width:90px;height:94px;.centerX();display:none;
+       	   .flames{position:absolute;left:0;top:-83%}
+       	   .fire_bar{width:100%;height:100%;background: url('../img/xin.png');z-index:50}
+           .flames1{width:100%;height:100%;background: url('../img/fire1.png');z-index:40}
+           .flames2{width:100%;height:100%;background: url('../img/fire2.png');z-index:30}
+           .flames3{width:100%;height:100%;background: url('../img/fire3.png');z-index:20}
+           .flames4{width:100%;height:100%;background: url('../img/fire4.png');z-index:10}
+           .flames5{width:100%;height:100%;background: url('../img/fire5.png');z-index:9}
+       }
+       .cake1{top:5%;left:20%;
+          &.leaveAni{
+          	  animation:lefttop 0.5s forwards; -webkit-animation:lefttop 0.5s  forwards; -moz-animation: lefttop 0.5s forwards; -o-animation:lefttop 0.5s forwards;
+          }
+       }
+       .cake2{top:5%;right:20%;
+          &.leaveAni{
+          	  animation:righttop 0.5s forwards; -webkit-animation:righttop 0.5s  forwards; -moz-animation: righttop 0.5s forwards; -o-animation:righttop 0.5s forwards;
+          }
+       }
+       .cake3{bottom:5%;left:8%;
+          &.leaveAni{
+          	  animation:bottomleft 0.5s forwards; -webkit-animation:bottomleft 0.5s  forwards; -moz-animation: bottomleft 0.5s forwards; -o-animation:bottomleft 0.5s forwards;
+          }
+       }
+       .cake4{bottom:5%;left:40%;z-index: 10;
+          &.leaveAni{
+          	  animation:bottomcenter 0.5s forwards; -webkit-animation:bottomcenter 0.5s  forwards; -moz-animation: bottomcenter 0.5s forwards; -o-animation:bottomcenter 0.5s forwards;
+          }
+       }
+       .cake5{bottom:5%;right:8%;
+          &.leaveAni{
+          	  animation:bottomright 0.5s forwards; -webkit-animation:bottomright 0.5s  forwards; -moz-animation: bottomright 0.5s forwards; -o-animation:bottomright 0.5s forwards;
+          }
+       }
+	}
+}
+.pize_list{
+	padding:0 40px;
+	h3{font-size:48px;text-align:center;color:#6c2b18;line-height:133px;}
+	li{width:156px;margin:0 13px 20px;float:left;
+      p{text-align: center;color:#6c2b18;font-size:14px;}
+      p.p1{padding:5px 0}
+      p.p2{font-weight:bold;font-size:18px;}
+    }
+}
+
+/*中奖弹窗*/
+.dialog_pop{display:none;position:fixed;width:100%;height:100%;text-align:center;z-index: 100;left:0;top:0;bottom:0;top:0;
+	&.Ani{display:block;}
+	s{width:1px;height:100%;.centerY()}
+    &.winning .flower{width:100%;height:100%;max-width:1200px;background:url('../img/caidai.png') no-repeat center center;background-size:100%;z-index:30;opacity:0;position:fixed;.center();}
+   .text_pop{max-width:350px;.center();background:url('../img/prize_bg.jpg') no-repeat center center;text-align:center;color:#d13210;font-size:32px;padding:20px;z-index:30;opacity:0;background-size:100%;border:6px solid #ffa324;border-radius:5px;
+       .p1{font-size:30px;}
+       .p2{font-size:24px;margin-bottom:8px}
+       .p3{font-size:18px;}
+       span{font-size:50px;display:block;margin-top:10px;font-weight:bold}
+   }
+   .mask{width:100%;height:100%;opacity:0.8;background:#000;position:fixed;z-index:20;position:fixed;left:0;top:0;right:0;bottom:0;opacity:0}
+   .bang{
+        width:426px;height:336px;.center();background:url('../img/ball_bg.png') no-repeat;z-index:25;opacity: 0;
+   }
+   .text_pop.Ani{
+   	   animation:prizeshow 0.2s 0.1s forwards; -webkit-animation:prizeshow 0.2s 0.1s forwards; -moz-animation: prizeshow 0.2s 0.1s forwards; -o-animation:prizeshow 0.2s 0.1s forwards;
+   }
+   .flower.Ani{
+   	   animation:delayshow 0s 0.3s forwards; -webkit-animation:delayshow 0s 0.3s forwards; -moz-animation: delayshow 0s 0.3s forwards; -o-animation:delayshow 0s 0.3s forwards;
+   }
+   .mask.Ani{
+   	   animation:mask 0s 0.3s forwards; -webkit-animation:mask 0s 0.3s forwards; -moz-animation: mask 0s 0.3s forwards; -o-animation:mask 0s 0.3s forwards;
+   }
+   .bang.Ani{
+   	   animation:bang 0.2s forwards; -webkit-animation:bang 0.2s forwards; -moz-animation:bang 0.2s forwards; -o-animation:bang 0.2s forwards;
+   }
+}
+.again_tips{
+	 display:none;cursor:pointer;
+	 position:absolute;left:50%;bottom:3%;z-index:150;transform:translateX(-50%)
+	 ;font-size:38px;padding:1% 2%;border-radius:5px;border:3px solid #fff;background:#f8b824;color:#d13210;text-transform: uppercase;
+    
+}
+.again_tips.Ani{
+	 display:block;opacity: 0;
+	 animation: tips 1.5s 0.8s linear forwards; -webkit-animation: tips 1.5s 0.8s linear forwards; -moz-animation: tips 1.5s 0.8s linear forwards; -o-animation: tips 1.5s 0.8s linear forwards;
+}
+/*蛋糕居中动画*/
+@-moz-keyframes center {
+	100% {left:50%;top:50%;transform:translate(-50%,-50%);transform:-moz-translate(-50%,50%);transform:-webkit-translate(-50%,50%);transform:-ms-translate(-50%,50%)}
+}
+@-webkit-keyframes center {
+	100% {left:50%;top:50%;transform:translate(-50%,-50%);transform:-moz-translate(-50%,50%);transform:-webkit-translate(-50%,50%);transform:-ms-translate(-50%,50%)}
+}
+@-o-keyframes center {
+	100% {left:50%;top:50%;transform:translate(-50%,-50%);transform:-moz-translate(-50%,50%);transform:-webkit-translate(-50%,50%);transform:-ms-translate(-50%,50%)}
+}
+@keyframes center {
+    100% {left:50%;top:50%;transform:translate(-50%,-50%);transform:-moz-translate(-50%,50%);transform:-webkit-translate(-50%,50%);transform:-ms-translate(-50%,50%)}
+}
+
+/*左上角蛋糕离开动画*/
+@-moz-keyframes lefttop {
+	 100% {transform:translate(-200%,-200%);transform:-moz-translate(-200%,-200%);transform:-webkit-translate(-200%,-200%);transform:-ms-translate(-200%,-200%)}
+}
+@-webkit-keyframes lefttop {
+	 100% {transform:translate(-200%,-200%);transform:-moz-translate(-200%,-200%);transform:-webkit-translate(-200%,-200%);transform:-ms-translate(-200%,-200%)}
+}
+@-o-keyframes lefttop {
+	 100% {transform:translate(-200%,-200%);transform:-moz-translate(-200%,-200%);transform:-webkit-translate(-200%,-200%);transform:-ms-translate(-200%,-200%)}
+}
+@keyframes lefttop {
+    100% {transform:translate(-200%,-200%);transform:-moz-translate(-200%,-200%);transform:-webkit-translate(-200%,-200%);transform:-ms-translate(-200%,-200%)}
+}
+
+/*右上角动画离开动画*/
+@-moz-keyframes righttop {
+	100% {transform:translate(200%,-200%);transform:-moz-translate(200%,-200%);transform:-webkit-translate(200%,-200%);transform:-ms-translate(200%,-200%)}
+}
+@-webkit-keyframes righttop {
+	100% {transform:translate(200%,-200%);transform:-moz-translate(200%,-200%);transform:-webkit-translate(200%,-200%);transform:-ms-translate(200%,-200%)}
+}
+@-o-keyframes righttop {
+	100% {transform:translate(200%,-200%);transform:-moz-translate(200%,-200%);transform:-webkit-translate(200%,-200%);transform:-ms-translate(200%,-200%)}
+}
+@keyframes righttop {
+    100% {transform:translate(200%,-200%);transform:-moz-translate(200%,-200%);transform:-webkit-translate(200%,-200%);transform:-ms-translate(200%,-200%)}
+}
+
+/*左下角蛋糕离开动画*/
+@-moz-keyframes bottomleft {
+	100% {transform:translate(-200%,200%);transform:-moz-translate(-200%,200%);transform:-webkit-translate(-200%,200%);transform:-ms-translate(-200%,200%)}
+}
+@-webkit-keyframes bottomleft {
+	100% {transform:translate(-200%,200%);transform:-moz-translate(-200%,200%);transform:-webkit-translate(-200%,200%);transform:-ms-translate(-200%,200%)}
+}
+@-o-keyframes bottomleft {
+	100% {transform:translate(-200%,200%);transform:-moz-translate(-200%,200%);transform:-webkit-translate(-200%,200%);transform:-ms-translate(-200%,200%)}
+}
+@keyframes bottomleft {
+    100% {transform:translate(-200%,200%);transform:-moz-translate(-200%,200%);transform:-webkit-translate(-200%,200%);transform:-ms-translate(-200%,200%)}
+}
+
+/*左中间蛋糕离开动画*/
+@-moz-keyframes bottomcenter {
+	100% {transform:translateY(200%);transform:-moz-translateY(-200%);transform:-webkit-translateY(200%);transform:-ms-translateY(200%)}
+}
+@-webkit-keyframes bottomcenter {
+	100% {transform:translateY(200%);transform:-moz-translateY(-200%);transform:-webkit-translateY(200%);transform:-ms-translateY(200%)}
+}
+@-o-keyframes bottomcenter {
+	100% {transform:translateY(200%);transform:-moz-translateY(-200%);transform:-webkit-translateY(200%);transform:-ms-translateY(200%)}
+}
+@keyframes bottomcenter {
+    100% {transform:translateY(200%);transform:-moz-translateY(-200%);transform:-webkit-translateY(200%);transform:-ms-translateY(200%)}
+}
+/*右下角蛋糕离开动画*/
+@-moz-keyframes bottomright {
+	100% {transform:translate(200%,200%);transform:-moz-translate(200%,200%);transform:-webkit-translate(200%,200%);transform:-ms-translate(200%,200%)}
+}
+@-webkit-keyframes bottomright {
+	100% {transform:translate(200%,200%);transform:-moz-translate(200%,200%);transform:-webkit-translate(200%,200%);transform:-ms-translate(200%,200%)}
+}
+@-o-keyframes bottomright {
+	100% {transform:translate(200%,200%);transform:-moz-translate(200%,200%);transform:-webkit-translate(200%,200%);transform:-ms-translate(200%,200%)}
+}
+@keyframes bottomright {
+    100% {transform:translate(200%,200%);transform:-moz-translate(200%,200%);transform:-webkit-translate(200%,200%);transform:-ms-translate(200%,200%)}
+}
+
+/*奖品弹层出现延迟动画*/
+@-moz-keyframes delayshow {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@-webkit-keyframes delayshow {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@-o-keyframes delayshow {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@keyframes delayshow {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
+@-moz-keyframes bang {
+	0% {opacity: 0;}
+	50%{opacity: 0.5;}
+	100%{opacity: 1;}
+}
+@-webkit-keyframes bang {
+	0% {opacity: 0;}
+	50%{opacity: 0.5;}
+	100%{opacity: 1;}
+}
+@-o-keyframes bang {
+	0% {opacity: 0;}
+	50%{opacity: 0.5;}
+	100%{opacity: 1;}
+}
+@keyframes bang {
+	0% {opacity: 0;}
+	50%{opacity: 0.5;}
+	100%{opacity: 1;}
+}
+
+@-moz-keyframes prizeshow {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@-webkit-keyframes prizeshow {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@-o-keyframes prizeshow {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@keyframes prizeshow {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@-moz-keyframes mask {
+	0% {opacity: 0}
+	100% {opacity: .5}
+}
+@-webkit-keyframes mask {
+	0% {opacity: 0}
+	100% {opacity: .5}
+}
+@-o-keyframes mask {
+	0% {opacity: 0}
+	100% {opacity: .5}
+}
+@keyframes mask {
+	0% {opacity: 0}
+	100% {opacity: .5}
+}
+
+@-moz-keyframes tips {
+	0% { opacity: 1}
+	50% {opacity: 1}
+	62% {opacity: 0}
+	74% {opacity: 1}
+	86% {opacity: 0}
+	100% {opacity: 1}
+}
+
+@-webkit-keyframes tips {
+	0% { opacity: 1}
+	50% {opacity: 1}
+	62% {opacity: 0}
+	74% {opacity: 1}
+	86% {opacity: 0}
+	100% {opacity: 1}
+}
+@-o-keyframes tips {
+	0% { opacity: 1}
+	50% {opacity: 1}
+	62% {opacity: 0}
+	74% {opacity: 1}
+	86% {opacity: 0}
+	100% {opacity: 1}
+}
+@keyframes tips {
+    0% { opacity: 1}
+	50% {opacity: 1}
+	62% {opacity: 0}
+	74% {opacity: 1}
+	86% {opacity: 0}
+	100% {opacity: 1}
+}
+
+@media (min-width:640px) and (max-width:767px) {
+	html {font-size:14px}
+}
+@media (min-width:768px) and (max-width:1023px) {
+	
+}
+@media (min-width:1024px) and (max-width:1200px) {
+	html {font-size:17px}
+}
+@media (min-width:1200px) and (max-width:1679px) {
+	html {font-size:18px}
+}
+@media (min-width:1680px) {
+	html {font-size:20px}
+}
+@media (min-width:320px) and (max-width:1023px) {
+	
+}
+@media (min-width:320px) and (max-width:1023px) {
+
+}
+@media (min-width:320px) and (max-width:768px) {
+   .dialog_pop{
+   	   .text_pop{
+	       
+	   }
+   }
+   .again_tips{font-size:20px;bottom:6%}
+}
+@media (min-width:400px) and (max-width:768px) {
+	
+}
+@media (min-width:768px) and (max-width:900px) {
+
+}
+@media (min-width:320px) and (max-width:400px) {
+
+}
+@media (min-width:1369px) and (max-width:2560px) {
+	/*大屏适配*/
+	
+}
